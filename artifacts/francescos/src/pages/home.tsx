@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   UtensilsCrossed, 
@@ -19,12 +19,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useToast } from "@/hooks/use-toast";
 
 // Data Models
 const MENU_ITEMS = {
@@ -83,7 +80,7 @@ export default function Home() {
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { toast } = useToast();
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,13 +98,9 @@ export default function Home() {
     }
   };
 
-  const handleReservation = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "¡Reservación Confirmada!",
-      description: "Te esperamos en Francesco's. Hemos enviado un correo con los detalles.",
-      duration: 5000,
-    });
+  const goToReservaciones = () => {
+    setMobileMenuOpen(false);
+    setLocation("/reservaciones");
   };
 
   return (
@@ -123,7 +116,7 @@ export default function Home() {
             <button onClick={() => scrollTo('nosotros')} className="hover:text-[#A0522D] transition-colors uppercase">Nosotros</button>
             <button onClick={() => scrollTo('menu')} className="hover:text-[#A0522D] transition-colors uppercase">Menú</button>
             <button onClick={() => scrollTo('galeria')} className="hover:text-[#A0522D] transition-colors uppercase">Galería</button>
-            <button onClick={() => scrollTo('reservaciones')} className="hover:text-[#A0522D] transition-colors uppercase">Reservaciones</button>
+            <button onClick={goToReservaciones} className="hover:text-[#A0522D] transition-colors uppercase">Reservaciones</button>
             <button onClick={() => scrollTo('contacto')} className="hover:text-[#A0522D] transition-colors uppercase">Contacto</button>
           </div>
 
@@ -139,7 +132,7 @@ export default function Home() {
           <button onClick={() => scrollTo('nosotros')} className="hover:text-[#A0522D] transition-colors">Nosotros</button>
           <button onClick={() => scrollTo('menu')} className="hover:text-[#A0522D] transition-colors">Menú</button>
           <button onClick={() => scrollTo('galeria')} className="hover:text-[#A0522D] transition-colors">Galería</button>
-          <button onClick={() => scrollTo('reservaciones')} className="hover:text-[#A0522D] transition-colors">Reservaciones</button>
+          <button onClick={goToReservaciones} className="hover:text-[#A0522D] transition-colors">Reservaciones</button>
           <button onClick={() => scrollTo('contacto')} className="hover:text-[#A0522D] transition-colors">Contacto</button>
         </div>
       )}
@@ -186,7 +179,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button 
-              onClick={() => scrollTo('reservaciones')}
+              onClick={goToReservaciones}
               className="bg-[#A0522D] hover:bg-[#8A4526] text-white text-lg px-8 py-6 rounded-none font-medium uppercase tracking-widest border-2 border-[#A0522D] transition-all"
             >
               Reserva tu Mesa
@@ -261,7 +254,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[3/4] overflow-hidden rounded-t-full shadow-2xl relative">
-                <img src="/images/facade.png" alt="Fachada de Francesco's" className="w-full h-full object-cover" />
+                <img src="https://res.cloudinary.com/du4odtnqj/image/upload/v1777008174/descargar_clz3rq.webp" alt="Fachada de Francesco's" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 border-8 border-white/20 rounded-t-full m-4 pointer-events-none"></div>
               </div>
               <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#FFFDD0] p-3 rounded-full shadow-xl border border-[#262626]/5">
@@ -305,9 +298,9 @@ export default function Home() {
                         <h3 className="font-serif text-xl font-bold flex items-center gap-2">
                           {item.name}
                           <div className="flex gap-1">
-                            {item.badges.includes("vegetariano") && <Leaf className="w-4 h-4 text-[#4B5320]" title="Vegetariano" />}
-                            {item.badges.includes("picante") && <Flame className="w-4 h-4 text-[#A0522D]" title="Picante" />}
-                            {item.badges.includes("recomendacion") && <Star className="w-4 h-4 text-yellow-500 fill-current" title="Recomendación del Chef" />}
+                            {item.badges.includes("vegetariano") && <span title="Vegetariano"><Leaf className="w-4 h-4 text-[#4B5320]" /></span>}
+                            {item.badges.includes("picante") && <span title="Picante"><Flame className="w-4 h-4 text-[#A0522D]" /></span>}
+                            {item.badges.includes("recomendacion") && <span title="Recomendación del Chef"><Star className="w-4 h-4 text-yellow-500 fill-current" /></span>}
                           </div>
                         </h3>
                         <div className="flex-1 border-b border-dashed border-[#FFFDD0]/30 mx-4 relative top-[-4px]"></div>
@@ -383,96 +376,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. RESERVACIONES */}
-      <section id="reservaciones" className="py-24 bg-gradient-to-b from-[#FFFDD0] to-[#EBE9C5]">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-            <div className="md:w-5/12 bg-[#262626] p-10 text-white flex flex-col justify-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#FFFDD0 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-              <h3 className="font-serif text-3xl mb-4 relative z-10">Acompáñanos</h3>
-              <p className="text-[#FFFDD0]/70 mb-8 relative z-10 font-light">
-                Reserva tu mesa con anticipación para asegurar tu lugar. Para eventos especiales, déjanos una nota.
-              </p>
-              <div className="space-y-6 relative z-10">
-                <div className="flex items-center gap-4">
-                  <Phone className="text-[#A0522D]" />
-                  <span>+52 33 3606 6021</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Clock className="text-[#A0522D]" />
-                  <div>
-                    <p>Lun-Sáb 13:00 - 23:00</p>
-                    <p className="text-sm text-white/60">Dom 13:00 - 22:00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-12 relative z-10">
-                <Button 
-                  className="w-full bg-[#25D366] hover:bg-[#1EBE5A] text-white font-bold py-6 rounded-xl flex items-center justify-center gap-2"
-                  onClick={() => window.open('https://wa.me/523336066021?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20reservaci%C3%B3n.', '_blank')}
-                >
-                  <MessageCircle /> Reserva por Chat
-                </Button>
-              </div>
+      {/* 5. CTA RESERVACIONES (link a página dedicada) */}
+      <section className="py-20 bg-gradient-to-b from-[#FFFDD0] to-[#EBE9C5]">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="font-serif text-4xl md:text-5xl text-[#A0522D] mb-6">Reserva tu Mesa</h2>
+            <p className="text-lg text-[#262626]/80 mb-10 leading-relaxed">
+              Asegura tu lugar en nuestra trattoria. Para celebraciones especiales, déjanos una nota y prepararemos algo memorable para ti.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                onClick={goToReservaciones}
+                className="bg-[#A0522D] hover:bg-[#4B5320] text-white text-lg px-10 py-6 rounded-none font-medium uppercase tracking-widest transition-colors duration-300"
+              >
+                Reservar Ahora
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => window.open('https://wa.me/523336066021?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20reservaci%C3%B3n.', '_blank')}
+                className="bg-[#25D366] hover:bg-[#1EBE5A] text-white border-[#25D366] hover:border-[#1EBE5A] text-lg px-10 py-6 rounded-none font-medium uppercase tracking-widest gap-2"
+              >
+                <MessageCircle size={18} /> Reserva por Chat
+              </Button>
             </div>
-
-            <div className="md:w-7/12 p-10 bg-white">
-              <h2 className="font-serif text-3xl text-[#A0522D] mb-8">Solicitud de Reservación</h2>
-              <form onSubmit={handleReservation} className="space-y-5">
-                <div className="grid grid-cols-2 gap-5">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#262626]">Fecha</label>
-                    <Input type="date" required className="border-[#262626]/20 rounded-md focus-visible:ring-[#A0522D]" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#262626]">Hora</label>
-                    <Input type="time" required className="border-[#262626]/20 rounded-md focus-visible:ring-[#A0522D]" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-5">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#262626]">Personas</label>
-                    <Select required>
-                      <SelectTrigger className="border-[#262626]/20">
-                        <SelectValue placeholder="Número de personas" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {[1,2,3,4,5,6,7,8,9,10].map(n => (
-                          <SelectItem key={n} value={n.toString()}>{n} {n === 1 ? 'persona' : 'personas'}</SelectItem>
-                        ))}
-                        <SelectItem value="mas">Más de 10</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#262626]">Nombre completo</label>
-                    <Input required placeholder="Tu nombre" className="border-[#262626]/20 rounded-md focus-visible:ring-[#A0522D]" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-5">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#262626]">Teléfono</label>
-                    <Input required type="tel" placeholder="Tu teléfono" className="border-[#262626]/20 rounded-md focus-visible:ring-[#A0522D]" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#262626]">Email</label>
-                    <Input required type="email" placeholder="correo@ejemplo.com" className="border-[#262626]/20 rounded-md focus-visible:ring-[#A0522D]" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-[#262626]">Notas adicionales</label>
-                  <Textarea placeholder="Cumpleaños, aniversarios, alergias..." className="border-[#262626]/20 rounded-md focus-visible:ring-[#A0522D] resize-none" rows={3} />
-                </div>
-
-                <Button type="submit" className="w-full bg-[#A0522D] hover:bg-[#4B5320] text-white text-lg py-6 rounded-xl transition-colors duration-300 font-medium">
-                  Confirmar Reservación
-                </Button>
-              </form>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -594,7 +526,7 @@ export default function Home() {
               <ul className="space-y-3">
                 <li><button onClick={() => scrollTo('nosotros')} className="hover:text-[#A0522D] transition-colors">Nuestra Historia</button></li>
                 <li><button onClick={() => scrollTo('menu')} className="hover:text-[#A0522D] transition-colors">Menú y Especialidades</button></li>
-                <li><button onClick={() => scrollTo('reservaciones')} className="hover:text-[#A0522D] transition-colors">Reserva tu Mesa</button></li>
+                <li><button onClick={goToReservaciones} className="hover:text-[#A0522D] transition-colors">Reserva tu Mesa</button></li>
                 <li><button onClick={() => scrollTo('contacto')} className="hover:text-[#A0522D] transition-colors">Ubicación</button></li>
                 <li><a href="#" className="hover:text-[#A0522D] transition-colors">Aviso de Privacidad</a></li>
               </ul>
