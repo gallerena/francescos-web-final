@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Ie5R9GfCZgndPJjswZimu"
+uri = "file://artifacts/francescos/public/images/hero.png"
+type = "image"
+title = "Wood-fired pizza hero image"
+
+[[generated]]
+id = "xW7H2Vl_7sgavOg1MoxHN"
+uri = "file://artifacts/francescos/public/images/facade.png"
+type = "image"
+title = "Italian restaurant brick facade"
+
+[[generated]]
+id = "YWqXAUqau1Ot3wXoFQwwA"
+uri = "file://artifacts/francescos/public/images/interior.png"
+type = "image"
+title = "Cozy restaurant interior"
+
+[[generated]]
+id = "d0sqG8meMrHmu_izxgxjm"
+uri = "file://artifacts/francescos/public/images/lasagna.png"
+type = "image"
+title = "Authentic steaming lasagna"
+
+[[generated]]
+id = "tsWIMOxo5tYhPu_hYPc3V"
+uri = "file://artifacts/francescos/public/images/fettuccine.png"
+type = "image"
+title = "Handmade fettuccine pasta"
+
+[[generated]]
+id = "tcrBoMvA_ycqh2NAsCF0P"
+uri = "file://artifacts/francescos/public/images/dough.png"
+type = "image"
+title = "Kneading pasta dough"
+
+[[generated]]
+id = "5u3mECSOgF_zFxFk3rlFz"
+uri = "file://artifacts/francescos/public/images/ingredients.png"
+type = "image"
+title = "Fresh Italian ingredients"
+
+[[generated]]
+id = "y90CJOctmzd0ZgF7bbw-I"
+uri = "file://artifacts/francescos/public/images/oven.png"
+type = "image"
+title = "Wood-fired pizza oven"
+
+[[generated]]
+id = "RquuRdem4WDTCUKZBHw6D"
+uri = "file://artifacts/francescos/public/images/decor.png"
+type = "image"
+title = "Rustic restaurant decor"
+
+[[generated]]
+id = "Rs6ugStoosilI-61tNozp"
+uri = "file://artifacts/francescos/public/images/ambience.png"
+type = "image"
+title = "Romantic candlelit dining"

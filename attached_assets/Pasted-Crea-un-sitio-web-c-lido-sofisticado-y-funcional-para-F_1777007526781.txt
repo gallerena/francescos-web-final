@@ -1,0 +1,119 @@
+Crea un sitio web cálido, sofisticado y funcional para "Francesco's", un restaurante especializado en pastas artesanales y pizzas al horno, ubicado en la zona de Historiadores. El diseño debe reflejar una experiencia auténtica, artesanal y familiar.
+
+DISEÑO Y ESTÉTICA:
+
+Paleta de colores: Terracota quemado (#A0522D), Blanco crema (#FFFDD0), Negro carbón (#262626), Verde albahaca (#4B5320).
+
+Tipografía: Serif clásica y romántica para títulos (estilo Bodoni o Cinzel), sans-serif suave para el cuerpo de texto (estilo Montserrat).
+
+Fotografía: Imágenes de pasta fresca, detalles de madera, paredes de ladrillo y vino tinto (placeholders de Unsplash).
+
+Animaciones: Transiciones suaves de opacidad y desplazamiento tipo parallax.
+
+Espaciado: Diseño equilibrado que evoque limpieza y confort.
+
+HERO SECTION:
+
+Imagen fullscreen de una pizza artesanal recién salida del horno o un plato de pasta humeante.
+
+Overlay cálido sutil (sepia ligero o 30% oscuro).
+
+Título: "La Esencia de Italia en tu Mesa"
+
+Subtítulo: "Sabores auténticos y recetas tradicionales en el corazón de Lomas del Nilo."
+
+Dos botones CTA: "Reserva tu Mesa" (Terracota) y "Explora el Menú" (Outline Crema).
+
+Indicador de scroll con ícono de tenedor/cuchara animado.
+
+SOBRE NOSOTROS:
+
+Layout de dos columnas: Historia a la izquierda, imagen de la fachada de ladrillo a la derecha.
+
+Breve relato sobre la pasión por la cocina italiana y el ambiente casero del restaurante.
+
+Misión: Ofrecer un refugio gastronómico donde la calidad y la tradición se encuentran.
+
+Sección "Nuestra Casa": Foto del acogedor interior con sus detalles rústicos.
+
+Estadísticas: Años de tradición, Variedad de pastas, Calificación de clientes (4.6 estrellas).
+
+MENÚ INTERACTIVO:
+
+Tabs: Antipasti / Pastas Clásicas / Pizzas Artesanales / Postres y Vinos.
+
+Diseño limpio:
+
+Nombre del plato en tipografía Serif destacada.
+
+Descripción detallada (ej. "Salsa pomodoro hecha en casa, albahaca fresca y mozzarella").
+
+Precio alineado a la derecha.
+
+Iconos: "Recomendación del Chef", "Vegetariano", "Picante".
+
+Botón "Descargar Menú en PDF".
+
+Sección "Especialidades de la Casa" con fotos grandes de Lasagna y Fettuccine.
+
+GALERÍA:
+
+Grid tipo masonry que muestre el proceso artesanal (masa, ingredientes frescos, horneado).
+
+Incluir fotos del ambiente a la luz de las velas y detalles de la decoración de madera/ladrillo.
+
+Lightbox interactivo.
+
+Hover effect: Zoom suave + nombre del platillo o área del restaurante.
+
+SISTEMA DE RESERVACIONES:
+
+Tarjeta centralizada con fondo crema y bordes redondeados.
+
+Campos: Fecha, Hora, Personas, Nombre, Teléfono, Email, y un área de "Notas" (cumpleaños, aniversarios).
+
+Botón "Confirmar Reservación" con cambio de color a verde albahaca al pasar el cursor.
+
+Opción directa: Botón de WhatsApp "Reserva por Chat" para atención inmediata.
+
+RESEÑAS Y TESTIMONIALES:
+
+Carousel con testimonios reales que destaquen el "ambiente familiar" y el "sabor casero".
+
+Estrellas doradas (5/5) para cada reseña.
+
+Enlace directo a Google Maps para ver las opiniones reales que respaldan el 4.6 de calificación.
+
+UBICACIÓN Y CONTACTO:
+
+Mapa de Google Maps centrado en la zona de Historiadores/Lomas del Nilo.
+
+Info de contacto:
+
+Dirección: Calle Elías Villalpando #960, Guadalajara.
+
+Teléfono: +52 33 3606 6021 (clickeable).
+
+Horarios: Lun-Sáb (13:00-23:00), Dom (13:00-22:00).
+
+Tips de llegada: Referencia cercana a Av. Historiadores y opciones de estacionamiento.
+
+FOOTER:
+
+Fondo negro carbón (#262626).
+
+Tres columnas: Logo/Eslogan, Enlaces Rápidos, y Suscripción al "Club de Pasta".
+
+Redes sociales: Instagram (estilo lifestyle) y Facebook.
+
+Barra inferior: "Hecho con pasión por [Tu Nombre]" y copyright de Francesco's.
+
+CARACTERÍSTICAS TÉCNICAS:
+
+Responsive Design: Optimizado para quienes buscan dónde cenar desde su celular.
+
+Navbar inteligente: Se vuelve semitransparente al bajar.
+
+Carga rápida de imágenes de alta resolución.
+
+Botón flotante de WhatsApp en la esquina inferior.
