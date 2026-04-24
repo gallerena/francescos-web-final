@@ -3,8 +3,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // // Componente removido
 // Componente removido
 // Error removido
-import Home from "@/pages/home";
-import Reservaciones from "@/pages/reservaciones";
+import Home from "./pages/home";
+import Reservaciones from "./pages/reservaciones";
 
 const queryClient = new QueryClient();
 
