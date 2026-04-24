@@ -2,7 +2,7 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // // Componente removido
 // Componente removido
-import NotFound from "@/pages/not-found";
+// Error removido
 import Home from "@/pages/home";
 import Reservaciones from "@/pages/reservaciones";
 
