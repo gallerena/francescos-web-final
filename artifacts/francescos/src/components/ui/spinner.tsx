@@ -1,4 +1,4 @@
-import { Loader2Icon } from "lucide-react"
+// Iconos removidos
 
 import { cn } from "@/lib/utils"
 

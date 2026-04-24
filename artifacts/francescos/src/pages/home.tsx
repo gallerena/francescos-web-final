@@ -17,11 +17,11 @@ import {
   X,
   ChevronRight
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+// Componente removido
+// Componente removido
+// Componente removido
+// Componente removido
+// Componente removido
 
 // Data Models
 const MENU_ITEMS = {
