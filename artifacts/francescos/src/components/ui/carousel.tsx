@@ -4,7 +4,7 @@ import useEmblaCarousel, {
 } from "embla-carousel-react"
 // Iconos removidos
 
-import { cn } from "@/lib/utils"
+import { cn } from "../lib/utils"
 // Componente removido
 
 type CarouselApi = UseEmblaCarouselType[1]

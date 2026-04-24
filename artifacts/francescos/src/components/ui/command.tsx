@@ -5,7 +5,7 @@ import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
 // Iconos removidos
 
-import { cn } from "@/lib/utils"
+import { cn } from "../lib/utils"
 // Componente removido
 
 const Command = React.forwardRef<

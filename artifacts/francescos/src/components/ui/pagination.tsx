@@ -1,7 +1,7 @@
 import * as React from "react"
 // Iconos removidos
 
-import { cn } from "@/lib/utils"
+import { cn } from "../lib/utils"
 // Componente removido
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (

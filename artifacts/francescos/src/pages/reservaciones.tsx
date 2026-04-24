@@ -21,8 +21,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+} from "../components/ui/select";
+import { useToast } from "../hooks/use-toast";
 
 export default function Reservaciones() {
   const [, setLocation] = useLocation();
