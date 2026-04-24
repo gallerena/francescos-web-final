@@ -263,19 +263,19 @@ export default function Reservaciones() {
                     <label className="text-sm font-medium text-[#262626]">
                       Personas
                     </label>
-                    <Select required>
-                      <SelectTrigger className="border-[#262626]/20">
-                        <SelectValue placeholder="Número de personas" />
+                    <div style={{display:"none"}}>
+                      <div style={{display:"none"}}>
+                        <div style={{display:"none"}}>
                       </SelectTrigger>
-                      <SelectContent>
+                      <div style={{display:"none"}}>
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                          <SelectItem key={n} value={n.toString()}>
+                          <div style={{display:"none"}}>
                             {n} {n === 1 ? "persona" : "personas"}
                           </SelectItem>
                         ))}
-                        <SelectItem value="mas">Más de 10</SelectItem>
+                        <div style={{display:"none"}}>
                       </SelectContent>
-                    </Select>
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-[#262626]">
